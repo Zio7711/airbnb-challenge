@@ -2,9 +2,13 @@ import Image from 'next/image';
 const Header = () => {
   return (
     <header>
-      <h1>I am the header</h1>
-      <div>
-        <Image src='https://links.papareact.com/qd3' layout='fill' />
+      <div className='relative flex items-center h-10 cursor-pointer my-auto'>
+        <Image
+          src='https://links.papareact.com/qd3'
+          layout='fill'
+          objectFit='contain'
+          objectPosition='left'
+        />
       </div>
 
       <div></div>
