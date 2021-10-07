@@ -58,7 +58,7 @@ const Home = ({ exploreData, cardsData }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const exploreData = await fetch('https://links.papareact.com/pyp').then(
     (res) => res.json()
   );
@@ -73,6 +73,6 @@ export async function getStaticProps() {
       cardsData,
     },
   };
-}
+};
 
 export default Home;
