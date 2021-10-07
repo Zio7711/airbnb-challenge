@@ -44,6 +44,7 @@ const Search = ({ searchResults }) => {
                   price={price}
                   star={star}
                   description={description}
+                  total={total}
                 />
               )
             )}
