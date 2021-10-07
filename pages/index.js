@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
+import SmallCard from '../components/SmallCard';
 
 const Home = ({ exploreData }) => {
   return (
@@ -17,7 +18,12 @@ const Home = ({ exploreData }) => {
         <section className='pt-6'>
           <h2 className='text-4xl font-semibold pb-5'>Explore Nearby</h2>
           {exploreData.map((item) => (
-            <h1>{item.location}</h1>
+            <SmallCard
+              key={item.img}
+              img={item.img}
+              distance={item.distance}
+              location={item.location}
+            />
           ))}
         </section>
       </main>
