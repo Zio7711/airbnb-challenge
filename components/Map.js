@@ -1,12 +1,21 @@
 import { useState } from 'react';
 import ReactMapGL from 'react-map-gl';
+import { getCenter } from 'geolib';
 
-const Map = () => {
+const Map = ({ searchResults }) => {
+  //transform search results to results needed
+  const coordinates = searchResults.map((result) => ({
+    longitude: result.long,
+    latitude: result.lat,
+  }));
+
+  const center = getCenter(coordinates);
+
   const [viewport, setViewport] = useState({
     width: '100%',
     height: '100%',
-    latitude: 37.7577,
-    longitude: -122.4376,
+    latitude: center.latitude,
+    longitude: center.longitude,
     zoom: 11,
   });
 
